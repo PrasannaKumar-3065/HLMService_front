@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Card = (props: any)=>{
     return(
-        <div className="bg-blue-49 shadow-md text-center flex flex-col items-center rounded-lg">
-            {props.icon}
-            <div className="p-2"> 
-                <h2 className="text-xl font-semibold text-gray-800">{props.heading}</h2>
-                <p className="mt-2 text-gray-600 text-sm">
+        <div className="bg-white/10 backdrop-blur-sm border-none hover:bg-white/20 transition-all cursor-pointer">
+            <div className="p-6 text-center"> 
+                {props.icon}
+                <h2 className="font-semibold mb-2">{props.heading}</h2>
+                <p className="text-sm text-blue-100">
                 {props.description}
                 </p>
             </div>
