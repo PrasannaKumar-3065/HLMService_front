@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Card = (props: any)=>{
     return(
-        <div className="bg-white text-center flex flex-col items-center">
+        <div className="bg-blue-49 shadow-md text-center flex flex-col items-center rounded-lg">
             {props.icon}
             <div className="p-2"> 
                 <h2 className="text-xl font-semibold text-gray-800">{props.heading}</h2>

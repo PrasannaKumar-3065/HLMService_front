@@ -2,6 +2,7 @@ import "./styles.css";
 import Navbar from './common/layouts/navbar';
 import Footer from './common/layouts/footer';
 import LandingService from './common/components/landingService';
+import Login from "./auth/login";
 import React from "react";
 
 export default function App() {
@@ -9,5 +10,6 @@ export default function App() {
     <><Navbar/>
     <LandingService/>
     <Footer/></>
+    // <Login/>
   );
 }

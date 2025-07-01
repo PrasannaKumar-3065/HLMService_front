@@ -13,7 +13,7 @@ const LandingService = () => {
   return (
     <section className="bg-gradient-to-br from-blue-500 to-blue-700 text-white py-16">
         <div className="flex flex-col items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div>
+            <div className='text-2xl font-bold'>
                 Local Services, On-Demand
             </div>
             <div>
