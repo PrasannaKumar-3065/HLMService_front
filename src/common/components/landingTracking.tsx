@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {  MapPin } from 'lucide-react'
+import {  Award, MapPin, Shield, Star, Tag } from 'lucide-react'
 import Card from '../layouts/card';
 
 const LandingTracking = () => {
@@ -13,8 +13,8 @@ const LandingTracking = () => {
           <div className='text-xl mb-8'>
             Watch your service provider approach in real-time
           </div>
-          <div className="w-full h-full max-w-7xl flex gap-10 mx-auto">
-            <div className="basis-[70%] bg-blue-50 text-center shadow rounded border border-gray-300 grid grid-cols-3 items-center justify-center">
+          <div className="w-full h-full max-w-7xl flex gap-10 mx-auto items-start">
+            <div className="basis-[70%] bg-blue-50 text-center shadow rounded border border-gray-300 grid grid-cols-3 items-center justify-center h-[350px]">
               <div className="flex items-center justify-center mt-10">
                 <div className="relative bottom-40 right-8">
                   <div className="bg-green-400 text-white px-3 py-2 rounded-full text-sm flex items-center">
@@ -30,7 +30,7 @@ const LandingTracking = () => {
                 <p className="text-gray-600 font-medium">Interactive Map Integration</p>
                 <p className="text-sm text-gray-500">Real-time tracking & route optimization</p>
               </div>
-              <div className="flex items-center justify-center">
+              <div className="flex items-start p-4   justify-end col-start-3 col-end-4" style={{ height: "100%" }}>
                 <div className="bg-white shadow-md p-4 rounded-lg">
                   <div className="text-sm font-semibold">2.3 miles away</div>
                   <div className="text-sm">ETA: 8 minutes</div>
@@ -38,13 +38,64 @@ const LandingTracking = () => {
               </div>
             </div>
             <div className='basis-[30%] grid grid-rows-2 md:grid-rows-4 gap-6'>
-              <div className="bg-white shadow-md p-4">
-                <div className="text-lg font-semibold mb-2">Service Provider</div>
-                <div className="text-gray-600">John Doe</div>
+              <div className="bg-white shadow-md p-4 flex flex-col gap-2">
+                <div className="text-lg font-semibold mb-2">Service Status</div>
+                <div className="text-gray-600 flex items-center">
+                  <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                  <div className='flex flex-col'><span className='text-sm font-semibold'>Service Confirmed</span>
+                  <span className='text-sm text-grey-100'>2:30 PM</span></div>
+                </div>
+                <div className="text-gray-600 flex items-center">
+                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse mr-2"></div>
+                  <div className='flex flex-col'><span className='text-sm text-green font-semibold'>Provider En Route</span>
+                  <span className='text-sm text-grey-100'>Current</span></div>
+                </div>
+                <div className="text-gray-600 flex items-center">
+                    <div className="w-3 h-3 bg-gray-200 rounded-full mr-2"></div>
+                    <div className='flex flex-col'><span className='text-sm font-semibold'>Service In Progress</span>
+                    <span className='text-sm text-grey-100'>Pending</span></div>
+                  </div>
               </div>
-              <div className="bg-white shadow-md p-4">
-                <div className="text-lg font-semibold mb-2">Estimated Arrival</div>
-                <div className="text-gray-600">15 minutes</div>
+              <div className="bg-white shadow-md p-4 flex flex-col gap-2">
+                <div className="text-lg font-semibold mb-2">Your Provider</div>
+                <div className="text-gray-600 flex items-center">
+                  <div className="w-16 h-16 bg-gray-200 rounded-full mr-2"></div>
+                  <div className='flex flex-col'><span className='text-sm font-bold'>Mike Johnson</span>
+                  <span className='text-sm text-grey-100'>Licensed Plumber</span>
+                  <div className='flex items-center space-x-1 mt-1'><div className="flex text-yellow-400">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3 w-3 fill-current" />
+                          ))}
+                        </div><span className='text-sm text-grey-100'>4.9 (127 reviews)</span></div></div>
+                </div>
+                <div>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center space-x-2">
+                      <Shield className="h-4 w-4 text-secondary" />
+                      <span className="text-sm text-gray-700">Background Checked</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Tag className="h-4 w-4 text-secondary" />
+                      <span className="text-sm text-gray-700">Licensed & Insured</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Award className="h-4 w-4 text-secondary" />
+                      <span className="text-sm text-gray-700">Top Rated Provider</span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <button>Call</button>
+                  <button className='ml-2'>Message</button>
+                </div>
+              </div>
+              <div className="bg-white shadow-md p-4 flex flex-col gap-2">
+                <div className="text-lg font-semibold mb-2">Service Status</div>
+                <div className="text-gray-600 flex items-center">
+                  <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                  <div className='flex flex-col'><span className='text-sm font-semibold'>Service Confirmed</span>
+                  <span className='text-sm text-grey-100'>2:30 PM</span></div>
+                </div>
               </div>
             </div>
           </div>
