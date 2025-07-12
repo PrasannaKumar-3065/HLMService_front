@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {  Award, MapPin, Shield, Star, Tag } from 'lucide-react'
+import {  Award, MapPin, MessageCircle, Phone, Shield, Star, Tag } from 'lucide-react'
 import Card from '../layouts/card';
 
 const LandingTracking = () => {
@@ -37,7 +37,7 @@ const LandingTracking = () => {
                 </div>
               </div>
             </div>
-            <div className='basis-[30%] grid grid-rows-2 md:grid-rows-4 gap-6'>
+            <div className='basis-[30%] grid grid-rows-2 md:grid-rows-3 gap-6'>
               <div className="bg-white shadow-md p-4 flex flex-col gap-2">
                 <div className="text-lg font-semibold mb-2">Service Status</div>
                 <div className="text-gray-600 flex items-center">
@@ -84,17 +84,38 @@ const LandingTracking = () => {
                     </div>
                   </div>
                 </div>
-                <div>
-                  <button>Call</button>
-                  <button className='ml-2'>Message</button>
+                <div className="flex space-x-2">
+                  <button className="bg-blue-400 text-white inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 flex-1">
+                      <Phone className="h-4 w-4 mr-2" />
+                      Call
+                    </button>
+                    <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 flex-1">
+                      <MessageCircle className="h-4 w-4 mr-2" />
+                      Message
+                    </button>
                 </div>
               </div>
-              <div className="bg-white shadow-md p-4 flex flex-col gap-2">
-                <div className="text-lg font-semibold mb-2">Service Status</div>
-                <div className="text-gray-600 flex items-center">
-                  <div className="w-3 h-3 bg-green-400 rounded-full mr-2"></div>
-                  <div className='flex flex-col'><span className='text-sm font-semibold'>Service Confirmed</span>
-                  <span className='text-sm text-grey-100'>2:30 PM</span></div>
+              <div className="bg-white shadow-md p-4 flex flex-col gap-2 p-6">
+                <div className="text-lg font-semibold mb-2">Service Estimate</div>
+                <div className='space-y-3'>
+                  <div className='flex justify-between items-center'>
+                    <span className='text-sm text-gray-600'>Base Service Fee</span>
+                    <span className='text-sm font-bold'>$89.00</span>
+                  </div>
+                  <div className='flex justify-between items-center'>
+                    <span className='text-sm text-gray-600'>Distance (2.3 miles)</span>
+                    <span className='text-sm font-bold'>$11.50</span>
+                  </div>
+                  <div className='flex justify-between items-center'>
+                    <span className='text-sm text-gray-600'>Service Fee</span>
+                    <span className='text-sm font-bold'>$8.95</span>
+                  </div>
+                  <hr></hr>
+                  <div className='flex justify-between items-center'>
+                    <span className='text-sm text-gray-600 font-semibold'>Estimated Total</span>
+                    <span className='text-blue-400 text-sm font-bold'>$109.45</span>
+                  </div>
+                  <div className="text-xs text-gray-500">* Final price may vary based on actual work performed</div>
                 </div>
               </div>
             </div>
