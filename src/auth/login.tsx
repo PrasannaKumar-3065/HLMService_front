@@ -1,10 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import axios from "axios";
 
 type FormData = {
   name: string;
   email: string;
+  username: string;
   password: string;
   repassword: string;
 };
@@ -18,9 +20,14 @@ const Login = () => {
     reset,
   } = useForm<FormData>({ mode: "onChange" });
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form submitted:", data);
-    reset();
+  const onSubmit = async (data: any) => {
+    try {
+      const response = await axios.post("http://localhost:8080/api/users", data);
+      console.log("Form submitted:", data);
+      reset();
+    } catch (error) {
+      console.error("Submission error:", error);
+    }
   };
 
   return (
@@ -29,7 +36,16 @@ const Login = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         {/* Name Field */}
-        {loginflag && (
+        {loginflag && (<>
+        <div>
+            <label className="block font-medium text-gray-700">Username</label>
+            <input
+              {...register("username", { required: "Username is required" })}
+              className="mt-1 w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500"
+              placeholder="Username"
+            />
+            {errors.username && <p className="text-red-500 text-sm mt-1">{errors.username.message}</p>}
+          </div>
           <div>
             <label className="block font-medium text-gray-700">Name</label>
             <input
@@ -38,7 +54,7 @@ const Login = () => {
               placeholder="Your name"
             />
             {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-          </div>
+          </div></>
         )}
 
         {/* Email Field */}
@@ -88,7 +104,7 @@ const Login = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          disabled={!isValid || isSubmitting}
+          disabled={isSubmitting}
           className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition disabled:bg-blue-300"
         >
           {isSubmitting ? "Submitting..." : "Submit"}
