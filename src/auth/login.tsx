@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import axios from "axios";
@@ -29,6 +29,10 @@ const Login = () => {
       console.error("Submission error:", error);
     }
   };
+
+  useEffect(()=>{
+    reset();
+  },[loginflag])
 
   return (
     <div className="max-w-md mx-auto bg-white p-8 rounded-xl shadow-lg mt-10">
