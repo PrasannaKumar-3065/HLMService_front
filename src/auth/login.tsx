@@ -22,15 +22,21 @@ const Login = () => {
 
   const onSubmit = async (data: any) => {
     try {
-      const response = await axios.post("http://localhost:8080/api/users", data);
-      console.log("Form submitted:", data);
-      reset();
+      var hlmLink = process.env.REACT_APP_BACKEND_CONNECTION
+      console.log(hlmLink)
+      if (!loginflag) 
+        hlmLink = hlmLink+"api/users/login"
+      else
+        hlmLink = hlmLink+"api/users"
+      const response = await axios.post(hlmLink, data)
+      console.log("Form submitted:", response.data)
     } catch (error) {
-      console.error("Submission error:", error);
+      console.error("Submission error:", error)
     }
   };
 
   useEffect(()=>{
+    console.log(loginflag)
     reset();
   },[loginflag])
 
