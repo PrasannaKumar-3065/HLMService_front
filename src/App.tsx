@@ -5,6 +5,7 @@ import LandingService from './common/components/landingService';
 import Login from "./auth/login";
 import React from "react";
 import LandingTracking from "./common/components/landingTracking";
+import BillingView from "./common/components/billingView";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
     // <LandingService/>
     // <LandingTracking/>
     // <Footer/></>
-    <Login/>
+    // <Login/>
+    <BillingView />
   );
 }
