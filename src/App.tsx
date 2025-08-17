@@ -8,10 +8,10 @@ import LandingTracking from "./common/components/landingTracking";
 
 export default function App() {
   return (
-    // <><Navbar/>
-    // <LandingService/>
-    // <LandingTracking/>
-    // <Footer/></>
-    <Login/>
+    <><Navbar/>
+    <LandingService/>
+    <LandingTracking/>
+    <Footer/></>
+    // <Login/>
   );
 }
